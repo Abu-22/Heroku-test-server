@@ -22,6 +22,6 @@ app.get('/*', (req,res) => {
   res.sendFile(__dirname+"/dist/smartgrade-webapp/index.html")
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('Server listening on the port::'+ port);
 });
