@@ -13,7 +13,7 @@ export class AppComponent implements OnDestroy {
 
   constructor(private appService: AppService) {}
 
-  title = 'angular-nodejs-example';
+  title = 'smartgrade';
 
   userForm = new FormGroup({
     firstName: new FormControl('', Validators.nullValidator && Validators.required),
@@ -37,7 +37,7 @@ export class AppComponent implements OnDestroy {
   }
 
   getAllUsers() {
-    console.log("This is a log that will show when you click getallusers");
+    console.log("This is a log that wilfghghl show when you click getallusers");
     this.appService.getUsers().pipe(takeUntil(this.destroy$)).subscribe((users: any[]) => {
         this.users = users;
 
