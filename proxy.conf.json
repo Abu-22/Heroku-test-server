@@ -2,7 +2,7 @@
 {
   
   "/api": {
-    "target": "http://localhost:443",
-    "secure": false
+    "target": "http://localhost:8080",
+    "secure": true
   }
 }
