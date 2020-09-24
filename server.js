@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(),
       bodyParser = require("body-parser");
-      port = 8080;
+      port = 443;
       const path = require('path');
 const users = [];
 
@@ -22,6 +22,6 @@ app.get('/*', (req,res) => {
   res.sendFile(__dirname+"/dist/smartgrade-webapp/index.html")
 });
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log('Server listening on the port::'+ port);
 });
