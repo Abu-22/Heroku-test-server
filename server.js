@@ -2,11 +2,11 @@ const express = require('express');
 const app = express(),
       bodyParser = require("body-parser");
       port = 8080;
-
+      const path = require('path');
 const users = [];
 
 app.use(bodyParser.json());
-app.use(express.static(process.cwd()+"/dist/smartgrade-webapp/"));
+app.use(express.static(__dirname+"/dist/smartgrade-webapp/"));
 
 app.get('/api/users', (req, res) => {
   res.json(users);
@@ -18,10 +18,10 @@ app.post('/api/user', (req, res) => {
   res.json("user added");
 });
 
-app.get('/', (req,res) => {
-  res.sendFile(process.cwd()+"/dist/smartgrade-webapp/index.html")
+app.get('/*', (req,res) => {
+  res.sendFile(__dirname+"/dist/smartgrade-webapp/index.html")
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('Server listening on the port::'+ port);
 });
