@@ -9,13 +9,14 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname+"/dist/smartgrade-webapp/"));
 
 app.get('/api/users', (req, res) => {
+  console.log("Server responds with list of users added so far");
   res.json(users);
 });
 
 app.post('/api/user', (req, res) => {
   const user = req.body.user;
   users.push(user);
-  res.json("user added");
+  res.json("user added to server.");
 });
 
 app.get('/*', (req,res) => {

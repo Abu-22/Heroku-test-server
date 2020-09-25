@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "dev": "nodemon ./server.js localhost 8080",
     "heroku-postbuild": "ng build --aot --prod"
   },
   "private": true,

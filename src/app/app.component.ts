@@ -37,7 +37,7 @@ export class AppComponent implements OnDestroy {
   }
 
   getAllUsers() {
-    console.log("This is a log that wilfghghl show when you click getallusers");
+    console.log('This is a log that will show when you click on getallusers');
     this.appService.getUsers().pipe(takeUntil(this.destroy$)).subscribe((users: any[]) => {
         this.users = users;
 
